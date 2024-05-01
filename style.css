@@ -1,0 +1,593 @@
+:root {
+  --color1: #131629;
+  --color2: #35d3f2;
+  --color3: #d3eaf6;
+  --color4: #0d3e72;
+  --color5: #2772ae;
+  --color6: #53545a;
+  --color7: #4c4b57;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Platypi", Montserrat, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background: linear-gradient(
+    var(--color1),
+    var(--color4),
+    var(--color5),
+    var(--color2),
+    var(--color3)
+  );
+}
+
+#header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.3rem 1rem;
+  z-index: 100;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #131629c7;
+  transition: box-shadow 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+#header:hover {
+  background-color: #131629f9;
+}
+
+#header-img {
+  border: none;
+  border-radius: 0 50% 0;
+  width: 4rem;
+  height: auto;
+  transition: transform 0.4s;
+}
+
+#header-img:hover {
+  transform: rotate(-20deg);
+  cursor: pointer;
+}
+
+nav {
+  font-weight: bold;
+  width: 40%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+li {
+  display: grid;
+  grid-template-rows: 5fr 1fr;
+  list-style: none;
+  cursor: pointer;
+}
+
+.line {
+  width: 10px;
+  height: 1px;
+  grid-row: 2/3;
+  margin-left: 1px;
+  background-color: var(--color3);
+  border-radius: 30%;
+  transition: width 0.3s ease-in, border-radius 0.5s;
+}
+
+nav li:hover .line {
+  width: 95%;
+  border-radius: 20%;
+}
+
+li a {
+  text-decoration: none;
+  color: var(--color2);
+  transition: text-shadow 0.5s, font-weight 0.5s;
+}
+
+nav li:hover a,
+nav li:hover,
+.button {
+  text-shadow: 0 0 10px var(--color2);
+}
+
+.button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  color: var(--color3);
+  cursor: pointer;
+  background-color: var(--color4);
+  transition: background-color 0.3s ease-in, color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--color2);
+  color: var(--color1);
+  box-shadow: 0px 0px 5px 2px var(--color2), 0px 2px 5px 2px var(--color4);
+}
+
+#Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100svw;
+  height: max-content;
+  padding: 5rem;
+  margin: 1rem 0 0;
+}
+
+#main_logo {
+  max-width: 13rem;
+  max-height: 13rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px 6px #131629, 0 0 2px 10px #2772ae;
+  transition: transform 0.4s;
+}
+
+#main_logo:hover {
+  transform: rotate(-20deg);
+}
+
+#main_home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  width: 100%;
+}
+
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  width: 100%;
+  height: fit-content;
+  color: transparent;
+  background: radial-gradient(var(--color2), #d3eaf6);
+  background-clip: text;
+}
+
+.heading:hover .second {
+  text-shadow: 20px 0 0 var(--color1);
+  color: #d3eaf6;
+}
+
+.heading:hover .second span {
+  text-shadow: 0 -10px 0 var(--color1);
+  color: #d3eaf6;
+}
+
+.heading:hover .first {
+  text-shadow: -20px 0 0 var(--color1);
+  color: #d3eaf6;
+}
+
+.first,
+.second {
+  font-size: 10rem;
+  text-align: center;
+}
+
+.first {
+  transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
+}
+
+.second span {
+  transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
+  font-size: 4rem;
+}
+
+.second {
+  transition: text-shadow 0.5s ease-out, color 0.5s ease-out;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 1em 2em;
+  width: max-content;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-radius: 10px;
+  box-shadow: inset 16px 16px 15px 1px #35d2f297, 16px 16px 15px 1px #35d2f297;
+  background-color: #0208251a;
+  transition: background-color 0.5s ease-out;
+  z-index: 4;
+}
+
+#form:hover {
+  background-color: #020825;
+}
+
+#forEmail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+  color: var(--color2);
+  cursor: pointer;
+  padding: 1rem 0.5rem 1rem;
+  transition: text-shadow 0.5s, font-weight 0.5s;
+}
+
+#forEmail:hover {
+  text-shadow: 0 0 10px var(--color2);
+  font-weight: bold;
+}
+
+#forEmail:hover .line {
+  width: 95%;
+  border-radius: 20%;
+}
+
+#forEmail input {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  color: var(--color3);
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: var(--color1);
+  border: none;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+#forEmail:hover input {
+  box-shadow: 0px 0px 5px 2px var(--color2), 0px 2px 5px 2px var(--color4);
+}
+
+#submit {
+  font-size: 1rem;
+}
+
+#About {
+  padding: 5rem;
+}
+
+#About:hover .forvideo {
+  box-shadow: 30px 30px 0 0 #131629a1, -30px -30px 0 0 #131629a1,
+    30px -30px 0 0 #131629a1, -30px 30px 0 0 #131629a1;
+}
+
+#About:hover .line {
+  width: 80%;
+  height: 4px;
+}
+
+.forvideo {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 3fr;
+  justify-items: center;
+  gap: 1rem;
+  padding: 5rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #131629, #1316299f, #131629);
+  color: #d3eaf6;
+  transition: box-shadow 0.5s ease-out;
+}
+
+.topic {
+  grid-area: 1/1/2/2;
+  font-size: 2rem;
+  align-self: last baseline;
+}
+
+.topic_content {
+  grid-area: 2/1/3/2;
+  align-self: first baseline;
+  width: 80%;
+}
+
+.topic,
+.topic_content {
+  justify-self: left;
+}
+
+#videoframe {
+  grid-area: 1/2/3/3;
+  width: 30svw;
+  aspect-ratio: 1;
+  overflow: hidden;
+  box-shadow: var(--color2) 3px 0px 5px 2px, var(--color1) -3px 0px 5px 2px;
+  border-radius: 6px;
+}
+
+video {
+  /* position: relative; */
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  /* top: -100px; */
+}
+
+#Shoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 1rem;
+  padding: 0 3rem;
+  background-color: #d3eaf6a6;
+}
+
+.forshoes {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  color: var(--color1);
+  cursor: default;
+}
+
+.forshoes .topic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+}
+
+.forshoes .line {
+  opacity: 0;
+}
+
+.forshoes:hover .line {
+  opacity: 100%;
+  width: 95%;
+  height: 4px;
+  background-color: #020825;
+}
+
+.card {
+  border-radius: 5%;
+  border: var(--color4) solid 2px;
+  width: 30%;
+  aspect-ratio: 0.8;
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--color1);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-1rem);
+  box-shadow: 0 0.5rem 4px 0 #020825;
+}
+
+.card .details {
+  width: 100%;
+  background-color: var(--color3);
+  padding: 0 1rem;
+}
+
+.card p {
+  align-self: right;
+}
+
+p.name {
+  font-weight: bolder;
+  font-size: larger;
+}
+
+#Men1 {
+  background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/010a335f64734eacbf75770a9ad46482_9366/Retropy_F2_Shoes_Black_IG9986_01_standard.jpg"),
+    linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &:hover {
+    background-image: url("https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/09be0725463247169d3092de8d7537b7_9366/retropy-f2-shoes.jpg"),
+      linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  }
+}
+
+#Men2 {
+  background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8b8ed018cab24bf0b1cf2d11a17fe5e3_9366/Stan_Smith_CS_Shoes_Yellow_IE9969_01_standard.jpg"),
+    linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &:hover {
+    background-image: url("https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/5b808ab57c984527b0d04d547a6ad63b_9366/stan-smith-cs-shoes.jpg"),
+      linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  }
+}
+
+#Men3 {
+  background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/89c1e71204214d59a1075d53428186ed_9366/Stan_Smith_CS_Shoes_Red_ID2044_01_standard.jpg"),
+    linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &:hover {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2106dd52954c43dabdee8a8324a21079_9366/Stan_Smith_CS_Shoes_Red_ID2044_02_standard.jpg"),
+      linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  }
+}
+
+#Men4 {
+  background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/be14e30f00d147669b01450eff1eb4aa_9366/Top_Ten_RB_Shoes_Blue_IE7244_01_standard.jpg"),
+    linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &:hover {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8e3f44b49bdc4b3d8159e032a795b36e_9366/Top_Ten_RB_Shoes_Blue_IE7244_02_standard_hover.jpg"),
+      linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  }
+}
+
+#Men5 {
+  background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b11773ec8a4c42f4943ddab506c198a6_9366/adidas_TRX_Vintage_Shoes_Blue_ID4611_01_standard.jpg"),
+    linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &:hover {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c3cb36ae916d49f6aab8165f6a0d22c4_9366/adidas_TRX_Vintage_Shoes_Blue_ID4611_02_standard_hover.jpg"),
+      linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  }
+}
+
+#Men6 {
+  background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/353437a5a33d4f8fa1a6aed500994fa1_9366/ADI_ZOOM_SHOES_Black_GA0871_01_standard.jpg"),
+    linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &:hover {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d1d0132db24c4045b072aed500995191_9366/ADI_ZOOM_SHOES_Black_GA0871_02_standard_hover.jpg"),
+      linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  }
+}
+
+#Women1 {
+  background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/6bb5938881ff428b88f487ba92eb968d_9366/Stan_Smith_CS_Shoes_Blue_IG2901_01_standard.jpg"),
+    linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &:hover {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/edd1f4531b044e8b80f811ccddf5a10c_9366/Stan_Smith_CS_Shoes_Blue_IG2901_02_standard_hover.jpg"),
+      linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  }
+}
+
+#Women2 {
+  background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ffb11b11257b429685f8da3163a6b136_9366/Stan_Smith_CS_Shoes_Purple_IG2899_01_standard.jpg"),
+    linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &:hover {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9f0ab8cad36f4b0da6f93751c024e57f_9366/Stan_Smith_CS_Shoes_Purple_IG2899_02_standard_hover.jpg"),
+      linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  }
+}
+
+#Women3 {
+  background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/57fca1e8cbfc423cb5d6acc30045ed2f_9366/Nizza_Trek_Shoes_White_GZ8858_01_standard.jpg"),
+    linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &:hover {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cb25a524f20546b293a6acc30045d146_9366/Nizza_Trek_Shoes_White_GZ8858_02_standard_hover.jpg"),
+      linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  }
+}
+
+#Women4 {
+  background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d4f5602c26da475691b2aed9009db61b_9366/Stan_Smith_Bonega_Shoes_Black_GY9345_01_standard.jpg"),
+    linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &:hover {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f7751745217d4b389023aed9009dc753_9366/Stan_Smith_Bonega_Shoes_Black_GY9345_02_standard_hover.jpg"),
+      linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  }
+}
+
+#Women5 {
+  background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/408c32b4ce73480aaf7b7158e6529fdd_9366/Duramo_Speed_Shoes_Turquoise_IF7272_01_standard.jpg"),
+    linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &:hover {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f9c432be5e2b4fcc82029af2e2ebc264_9366/Duramo_Speed_Shoes_Turquoise_IF7272_02_standard.jpg"),
+      linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  }
+}
+
+#Women6 {
+  background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3feff8b4296441ddb4b3cdd5c8e8ef62_9366/Galaxy_6_Shoes_Blue_IE1991_01_standard.jpg"),
+    linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &:hover {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b2bad35e4f254ae8b7bb2d632f4968e3_9366/Galaxy_6_Shoes_Blue_IE1991_02_standard.jpg"),
+      linear-gradient(45deg, var(--color4), var(--color2), var(--color4));
+  }
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  background-color: #020825;
+  text-align: center;
+  align-items: center;
+  margin-top: 2rem;
+  border-top: 1rem solid var(--color3);
+  color: var(--color3);
+}
+
+.copyright {
+  grid-column: 1/3;
+  background-color: #131629;
+  padding: 0.5rem 0;
+}
+
+@media only screen and (max-width: 1073px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 807px) {
+  :root {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 674px) {
+  :root {
+    font-size: 8px;
+  }
+}
